@@ -5,6 +5,7 @@ import authInterceptor from './interceptor.factory';
 import 'angular-resource';
 import 'angular-messages';
 import {PokemonServiceModule} from '../services/pokemon.service';
+import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js';
 
 export default angular.module('app.core', [
   'ngResource',

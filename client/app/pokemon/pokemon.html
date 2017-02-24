@@ -2,6 +2,16 @@
 <div class="container">
 
   <p>AVAILABLE POKEMON: {{vm.pokemon.length}}</p>
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      {{vm.selectedType.name}}
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li ng-repeat="type in vm.types"><a ng-click="vm.selectType(type); vm.searchPokemon();">{{type.name}}</a></li>
+    </ul>
+  </div>
+
   <div class="well">
     <div class="row">
       <label class="col-sm-2">Search</label>
