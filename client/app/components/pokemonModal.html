@@ -3,13 +3,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{vm.pokemon.name}}</h5>
+        <h2 class="modal-title" id="exampleModalLabel">{{vm.pokemon.name}}</h2>
+        <span>Types: </span><span style="margin-right:2px;" class="label label-primary" ng-repeat="type in vm.pokemon.type">{{type}}</span>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Type: {{vm.pokemon.type}}</p>
+        <img class="thumbnail" ng-src="{{vm.pokemon.img}}" alt=""><br />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

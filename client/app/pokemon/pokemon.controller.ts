@@ -12,13 +12,13 @@ class PokemonController {
     private PokemonService: PokemonServiceClass
   ) {
     this.retrievePokemon();
+    this.getTypes();
   }
 
   retrievePokemon() {
     this.PokemonService.getPokemon()
       .then((pokemon) => {
         this.pokemon = pokemon.data['pokemon'];
-        this.getTypes();
       }).catch((e) => {
         console.log(e);
         this.results = [{name: 'Unable to retrieve Pokemon'}];
