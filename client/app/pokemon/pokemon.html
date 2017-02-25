@@ -1,6 +1,5 @@
 <!-- <pre>{{vm.pokemon | json:2}}</pre> -->
 <div class="container">
-
   <p>AVAILABLE POKEMON: {{vm.pokemon.length}}</p>
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -29,10 +28,15 @@
 
   <div class="well">
     <div class="row">
-      <div class="bg-primary col-xs-12" ng-repeat="result in vm.results track by $index">
+      <div
+        class="bg-primary col-xs-12"
+        ng-repeat="result in vm.results track by $index"
+        ng-click="vm.selectPokemon(result)"
+        data-toggle="modal"
+        data-target="#myModal">
         {{result.name}}
       </div>
     </div>
   </div>
-
+  <pokemon-modal pokemon="vm.selectedPokemon"></pokemon-modal>
 </div>

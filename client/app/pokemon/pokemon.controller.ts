@@ -2,12 +2,15 @@ import {PokemonServiceClass} from '../services/pokemon.service';
 
 class PokemonController {
   pokemon;
+  selectedPokemon;
   search:string;
   results:Array<any> = [{name: 'No Results'}];
   types:Array<any>;
   selectedType:any = {name: 'all'};
 
-  constructor(private PokemonService: PokemonServiceClass) {
+  constructor(
+    private PokemonService: PokemonServiceClass
+  ) {
     this.retrievePokemon();
   }
 
@@ -61,6 +64,10 @@ class PokemonController {
         return type.toLowerCase() === this.selectedType.name;
       });
     });
+  }
+
+  selectPokemon(pokemon) {
+    this.selectedPokemon = pokemon;
   }
 }
 
